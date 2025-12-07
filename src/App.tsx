@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { Calendar, Clock, MapPin, Download } from 'lucide-react';
+import { Clock, MapPin, Download } from 'lucide-react';
 import InvitationCard from './components/InvitationCard';
 import AnnouncementHero from './components/AnnouncementHero';
+
+// Import des images depuis src/assets
+import img1 from './assets/whatsapp_image_2025-12-07_a_11.42.52_fbac3cb6.jpg';
+import img2 from './assets/whatsapp_image_2025-12-07_a_11.42.53_6a042c12.jpg';
 
 function App() {
   const [showInvitation, setShowInvitation] = useState(false);
@@ -52,19 +56,21 @@ function App() {
               </p>
             </div>
 
+            {/* Galerie d'images */}
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <img
-                src="/whatsapp_image_2025-12-07_a_11.42.52_fbac3cb6.jpg"
+                src={img1}
                 alt="Martyrs de l'indépendance"
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
               <img
-                src="/whatsapp_image_2025-12-07_a_11.42.53_6a042c12.jpg"
+                src={img2}
                 alt="Leaders historiques"
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
             </div>
 
+            {/* Activités */}
             <div className="bg-blue-50 rounded-xl p-6 mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">ACTIVITÉS</h2>
               <div className="grid md:grid-cols-2 gap-3">
@@ -83,6 +89,7 @@ function App() {
               </div>
             </div>
 
+            {/* Informations */}
             <div className="space-y-4 mb-8 bg-gradient-to-r from-blue-50 to-red-50 p-6 rounded-xl">
               <div className="flex items-start space-x-3">
                 <Clock className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
@@ -103,6 +110,7 @@ function App() {
               </div>
             </div>
 
+            {/* Formulaire d'invitation */}
             <form onSubmit={handleGenerateInvitation} className="bg-gradient-to-r from-blue-600 to-red-600 p-6 rounded-xl text-white">
               <h3 className="text-xl font-bold mb-4 text-center">RECEVOIR MON INVITATION</h3>
               <div className="flex flex-col md:flex-row gap-3">
@@ -140,3 +148,4 @@ function App() {
 }
 
 export default App;
+ 
